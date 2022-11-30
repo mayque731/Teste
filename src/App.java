@@ -1,4 +1,10 @@
+import static org.junit.Assert.assertEquals;
+
 import java.util.Scanner;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -7,10 +13,10 @@ public class App {
         int opc=1;
         try (Scanner leia = new Scanner(System.in)) {
             System.out.println("Insira o primeiro numero");
-            n1 = leia.nextDouble();
+            n1 = leia.nextFloat();
 
             System.out.println("Insira o segundo numero");
-            n2 = leia.nextDouble();
+            n2 = leia.nextFloat();
 
             System.out.println("Selecione uma operação:");
             System.out.println("1-Soma");
@@ -48,5 +54,25 @@ public class App {
 
     public static double Mult(double n1, double n2){
         return n1*n2;
+    }
+
+    @Test
+    public void testSoma(){
+        assertEquals(11,Soma(6,5),0);
+    }
+    @Test
+    public void testSub(){
+       assertEquals(5, Sub(15,10), 0);
+    }
+
+
+    @Test
+    public void testDiv(){
+        assertEquals(2, Div(10, 5), 0);
+    }
+    @Test
+    public void testMult(){
+        assertEquals(18, Mult(6, 3), 0);
+        ;
     }
 }
