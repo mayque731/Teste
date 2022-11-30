@@ -5,22 +5,22 @@ public class App {
         
         double n1 ,n2;
         int opc=1;
-        Scanner leia = new Scanner(System.in);
+        try (Scanner leia = new Scanner(System.in)) {
+            System.out.println("Insira o primeiro numero");
+            n1 = leia.nextDouble();
 
+            System.out.println("Insira o segundo numero");
+            n2 = leia.nextDouble();
 
-        System.out.println("Insira o primeiro numero");
-        n1 = leia.nextDouble();
+            System.out.println("Selecione uma operação:");
+            System.out.println("1-Soma");
+            System.out.println("2-Subtração");
+            System.out.println("3-Divisão");
+            System.out.println("4-Multiplicação");
 
-        System.out.println("Insira o segundo numero");
-        n2 = leia.nextDouble();
+            opc = leia.nextInt();
+        }
 
-        System.out.println("Selecione uma operação:");
-        System.out.println("1-Soma");
-        System.out.println("2-Subtração");
-        System.out.println("3-Divisão");
-        System.out.println("4-Multiplicação");
-
-        opc = leia.nextInt();
 
         switch(opc){
             case 1: System.out.println("Resultado da soma: " +Soma(n1,n2)); 
